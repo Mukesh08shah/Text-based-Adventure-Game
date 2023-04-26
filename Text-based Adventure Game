@@ -1,0 +1,49 @@
+# Text-Based Adventure Game
+
+# Welcome message
+print("Welcome to the Adventure Game! You find yourself in a dark forest. You have a map, a compass, and a flashlight. Which direction will you go?")
+
+# Start of the game
+while True:
+    # Prompt the user for their choice
+    choice = input("Enter 'north', 'south', 'east', or 'west': ").lower()
+
+    # Check the user's choice and respond accordingly
+    if choice == 'north':
+        print("You walk north and find a river. Do you want to follow the river or cross it?")
+        river_choice = input("Enter 'follow' or 'cross': ").lower()
+        if river_choice == 'follow':
+            print("You follow the river and come across a cave. Do you want to explore the cave?")
+            cave_choice = input("Enter 'yes' or 'no': ").lower()
+            if cave_choice == 'yes':
+                print("You enter the cave and find a treasure chest. You open it and find gold coins. Congratulations, you have won the game!")
+                break
+            elif cave_choice == 'no':
+                print("You decide not to explore the cave and head back to where you started.")
+        elif river_choice == 'cross':
+            print("You attempt to cross the river but the current is too strong. You get swept away and drown. Game over!")
+            break
+    elif choice == 'south':
+        print("You walk south and encounter a pack of wolves. Do you want to fight or run?")
+        wolf_choice = input("Enter 'fight' or 'run': ").lower()
+        if wolf_choice == 'fight':
+            print("You fight the wolves and manage to kill them all. You continue on your journey.")
+        elif wolf_choice == 'run':
+            print("You run away from the wolves and escape. You continue on your journey.")
+    elif choice == 'east':
+        print("You walk east and find an abandoned house. Do you want to enter the house?")
+        house_choice = input("Enter 'yes' or 'no': ").lower()
+        if house_choice == 'yes':
+            print("You enter the house and find a ghost. The ghost scares you and you run away. You head back to where you started.")
+        elif house_choice == 'no':
+            print("You decide not to enter the house and head back to where you started.")
+    elif choice == 'west':
+        print("You walk west and come across a bear. Do you want to fight or climb a tree?")
+        bear_choice = input("Enter 'fight' or 'climb': ").lower()
+        if bear_choice == 'fight':
+            print("You fight the bear but it overpowers you and kills you. Game over!")
+            break
+        elif bear_choice == 'climb':
+            print("You climb a tree and wait for the bear to leave. Once it's gone, you continue on your journey.")
+    else:
+        print("Invalid input. Please enter 'north', 'south', 'east', or 'west'.")
